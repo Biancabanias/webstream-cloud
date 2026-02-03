@@ -1,88 +1,101 @@
-/* 🌷 Estilo coquette soft – elegante y mono */
+/* 🌸 Rosita bonito y estable (sin bug) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+:root{
+  --bg1: #fff1f7;
+  --bg2: #ffe1ee;
+  --card: rgba(255, 255, 255, 0.75);
+  --stroke: rgba(255, 105, 180, 0.20);
+  --text: #4a2340;
+  --muted: #7a3a62;
+  --pink: #ff4fa3;
+  --pink2:#ff87c6;
+}
 
-body {
+*{ box-sizing: border-box; }
+
+body{
   margin: 0;
   min-height: 100vh;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: var(--text);
 
+  /* Centrado */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  /* Fondo suave con efecto nube */
+  /* Fondo rosita con “lucecitas” */
   background:
-    radial-gradient(circle at top left, #ffe0ec 0%, transparent 40%),
-    radial-gradient(circle at bottom right, #ffd1e3 0%, transparent 45%),
-    #fff5fa;
+    radial-gradient(circle at 15% 20%, #ffd6ea 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, #ffc1df 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+  padding: 28px 16px;
 }
 
-/* Contenedor tipo tarjeta */
-body > * {
-  background: #ffffff;
-  padding: 35px 32px;
-  border-radius: 28px;
-  text-align: center;
-
-  box-shadow:
-    0 20px 40px rgba(255, 180, 210, 0.35),
-    inset 0 0 0 1px #ffe3ef;
-
-  max-width: 480px;
-  width: 85%;
+/* Tarjeta central */
+body::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 55%);
 }
 
-/* Título */
-h1 {
-  margin-top: 0;
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: #c2185b;
-  letter-spacing: 0.5px;
+h1, p, button{
+  position: relative; /* para que estén por encima del ::before */
 }
 
-/* Texto */
-p {
-  color: #7d3a5f;
+/* H1 */
+h1{
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: #b1005a;
+  text-shadow: 0 10px 25px rgba(177, 0, 90, 0.12);
+}
+
+/* Párrafo */
+p{
+  margin: 0 0 18px;
   font-size: 1rem;
-  margin-bottom: 22px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  padding: 10px 14px;
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* Botón estilo soft pill */
-button {
-  padding: 14px 26px;
-  border-radius: 999px;
-  border: none;
+/* Botón */
+button{
+  border: 0;
   cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: white;
 
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 0.95rem;
-
-  background: #ffe3ef;
-  color: #c2185b;
-
-  box-shadow:
-    0 8px 18px rgba(194, 24, 91, 0.18);
-
-  transition: all 0.2s ease;
+  background: linear-gradient(135deg, var(--pink), var(--pink2));
+  box-shadow: 0 14px 30px rgba(255, 79, 163, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-button:hover {
-  background: #ffc9df;
-  transform: scale(1.04);
+button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(255, 79, 163, 0.35);
 }
 
-button:active {
-  transform: scale(0.98);
+button:active{
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(255, 79, 163, 0.22);
 }
 
-/* Detalle decorativo */
-h1::after {
-  content: " ✦";
-  color: #ff8fb8;
+/* Seguridad para pantallas pequeñas */
+@media (max-width: 420px){
+  p{ text-align: center; }
 }
-
-
-
