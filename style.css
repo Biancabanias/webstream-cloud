@@ -1,9 +1,68 @@
-body {
-  font-family: Arial, sans-serif;
+/* 🌸 Estilo rosita y mono */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: #f2f2f2;
+
+  /* Fondo degradado rosita */
+  background: linear-gradient(135deg, #ffe6f2, #ffd6e8, #fff0f7);
 }
 
-h1 {
-  color: #333;
+h1{
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #b1005a;
+  text-shadow: 0 2px 10px rgba(177, 0, 90, 0.15);
 }
+
+p{
+  margin: 0 0 18px;
+  color: #7a2b52;
+  font-size: 1rem;
+}
+
+button{
+  padding: 12px 18px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+
+  /* Botón rosa */
+  background: linear-gradient(135deg, #ff4fa3, #ff87c6);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 79, 163, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(255, 79, 163, 0.35);
+}
+
+button:active{
+  transform: translateY(0px);
+  box-shadow: 0 8px 16px rgba(255, 79, 163, 0.25);
+}
+
+/* “tarjetita” alrededor del contenido */
+body > *{
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 28px 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 79, 163, 0.15);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  max-width: 520px;
+  width: 85%;
+}
+
+
